@@ -14,7 +14,7 @@ ENV TZ=UTC \
   DB_CONNECTION=mysql \
   DB_HOST=db \
   DB_PORT=3306 \
-  DB_DATABASE=kredo \
+  DB_DATABASE=docker-laravel \
   DB_USERNAME=root \
   DB_PASSWORD=secret
 
