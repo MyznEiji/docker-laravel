@@ -91,33 +91,3 @@ ide-helper:
 	docker-compose exec app php artisan ide-helper:generate
 	docker-compose exec app php artisan ide-helper:meta
 	docker-compose exec app php artisan ide-helper:models --nowrite
-ko-init:
-	mkdir -p ./docker/php/bash/psysh
-	touch ./docker/php/bash/.bash_history
-	docker-compose up -d --build
-	docker-compose exec app composer update --no-scripts
-	docker-compose exec app php artisan key:generate
-	docker-compose exec app php artisan storage:link
-	docker-compose exec app php artisan cache:clear
-	docker-compose exec app php artisan config:cache
-	docker-compose exec app php artisan migrate:fresh --seed
-	docker-compose exec app php artisan db:seed --class=CourseAndSubjectsSeeder
-	docker-compose exec node npm install
-	docker-compose exec node npm run dev
-ko-migrate:
-	docker-compose exec app php artisan cache:clear
-	docker-compose exec app php artisan config:cache
-	docker-compose exec app php artisan migrate:fresh
-	docker-compose exec app php artisan db:seed
-	docker-compose exec app php artisan db:seed --class=CourseAndSubjectsSeeder
-ko-composer-install:
-	docker-compose exec app composer install
-ko-composer-update:
-	docker-compose exec app composer update
-ko-npm:
-	docker-compose exec node npm install
-	docker-compose exec node npm run dev
-ko-update:
-	@make ko-migrate
-	@make ko-composer-install
-	@make ko-npm
