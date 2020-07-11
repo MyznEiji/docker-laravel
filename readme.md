@@ -34,3 +34,15 @@
 │    └── docker-compose.yml
 └── .env
 ```
+
+
+
+
+
+## Setup
+
+1. Change `COMPOSE_PROJECT_NAME` on `.env`
+2. Change the name of laravel project to `backend`
+
+
+
