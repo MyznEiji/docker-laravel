@@ -43,6 +43,11 @@
 
 1. Change `COMPOSE_PROJECT_NAME` on `.env`
 2. Change the name of laravel project to `backend`
+3. Change DB name on Docker file of Mysql
+4. Change DB config on Docker file of PHP
+5. Open http://localhost:8080/ and http://localhost:8888/ 
+
+
 
 
 
